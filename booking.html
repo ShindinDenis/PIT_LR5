@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись - Автомойка "Чистый Путь"</title>
+    <style>
+        /* Базовые цвета и шрифты */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #343A40;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Стили шапки */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        nav { margin-top: 10px; }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--primary-color); }
+        .active-link { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+
+        /* Стили основного контейнера и формы */
+        .container { flex: 1; max-width: 800px; margin: 0 auto; padding: 20px; width: 100%; box-sizing: border-box; }
+        .section-title {
+            text-align: center; color: var(--secondary-color);
+            margin-bottom: 30px; font-size: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block; padding-bottom: 5px;
+        }
+
+        .booking-section {
+            background: white; padding: 40px; border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 50px;
+        }
+
+        /* Улучшение полей ввода (тот самый коммит) */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 10px; border: 1px solid #ccc;
+            border-radius: 4px; font-size: 1rem; box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color); color: white;
+            border: none; padding: 12px 25px; font-size: 1.1rem;
+            border-radius: 4px; cursor: pointer; width: 100%;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        .submit-btn:hover { background-color: #0056b3; }
+        .submit-btn:active { transform: scale(0.98); }
+
+        /* Стили подвала */
+        footer {
+            background-color: var(--secondary-color); color: white;
+            text-align: center; padding: 20px 0; margin-top: auto;
+        }
+        footer p { margin: 5px 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header>
+        <h1>Чистый Путь</h1>
+        <nav>
+            <a href="index.html">Услуги и Цены</a>
+            <a href="booking.html" class="active-link">Онлайн-запись</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Форма записи -->
+        <div class="booking-section">
+            <div style="text-align: center;">
+                <h2 class="section-title">Оформление заказа</h2>
+            </div>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Ваше имя (ФИО):</label>
+                    <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+                </div>
+                <div class="form-group">
+                    <label for="car">Марка и номер автомобиля:</label>
+                    <input type="text" id="car" name="car" placeholder="Toyota Camry (А111АА72)" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Выберите услугу:</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Выберите из списка --</option>
+                        <option value="express">Экспресс мойка (500 ₽)</option>
+                        <option value="complex">Комплексная мойка (1200 ₽)</option>
+                        <option value="dryclean">Химчистка салона (4500 ₽)</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Оформить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <p>&copy; 2026 Автомойка "Чистый Путь". Все права защищены.</p>
+        <p>Адрес: г. Тюмень, ул. Мельникайте, 70 | Телефон: +7 (999) 123-45-67</p>
+        <p><i>Разработано: Шиндин Д.Н., Фабрициус А.О. (Группа ИСТН6-24-1)</i></p>
+    </footer>
+
+</body>
+</html>
